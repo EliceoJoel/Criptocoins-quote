@@ -14,27 +14,29 @@
          <h1>Criptocoins quote</h1>
       </header>
       <div class="content">
-         <form action="" id="form">  
-            <img src="/img/bitcoin.png" alt="bitcoin">
+         <form action="" id="form"> 
+            <div class="image">
+               <img src="/img/bitcoin.svg" alt="bitcoin">
+            </div> 
             <div class="select-group">
-               <select name="coin" id="coin" required>
+               <select name="coin" id="coin" required class="margin-bottom">
                   <option value="" selected disabled>Choose a coin</option>
                   <option value="dolar">American dolar</option>
                   <option value="boliviano">Bolivianos</option>
                   <option value="libra">Libras</option>
                   <option value="euro">Euros</option>
                </select>
-               <select name="criptocoin" id="criptocoin" required>
+               <select name="criptocoin" id="criptocoin" required class="margin-bottom">
                   <option value="" selected disabled>Choose a criptocoin</option>
                </select>
-            </div>
-            <button type="submit" id="submit-button">Quote</button> 
+               <button type="submit" id="submit-button" class="margin-bottom">Quote</button>
+            </div> 
          </form>
-         <div class="spiner">
-            <div class="loader"></div>
-         </div>
+         <div class="loader"></div>
          <div class="result">
-            <!-- result here -->
+            <div class="result-content">
+               
+            </div>
          </div>
       </div>
       <footer>
