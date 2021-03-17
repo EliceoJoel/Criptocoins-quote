@@ -9,5 +9,11 @@ const form = document.getElementById('form');
 //check select coins
 form.addEventListener('submit', (e) => {
    e.preventDefault();
-   
+   const coinSelect = document.getElementById('coin').value;
+   const criptoCoinSelect = document.getElementById('criptocoin').value;
+   Api.getInformationCripto(coinSelect, criptoCoinSelect)
+      .then(data => {
+         ui.showInfoResultOfCriptoCoin(data.RAW, criptoCoinSelect, coinSelect);
+      })
+
 });

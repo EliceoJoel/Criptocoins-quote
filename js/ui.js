@@ -19,5 +19,45 @@ class UI {
                select.appendChild(option);
             }
          })
+         .catch(error => {
+            let errorHtml = `<div class="result-content error"><p>An error occurred, please reload the page</p></div>`
+            document.querySelector(".result").innerHTML = errorHtml
+         })
+   }
+
+   showInfoResultOfCriptoCoin(result, criptocoin, coin){
+
+      //remove previuos results
+      const previous  =  document.querySelector('.result > div');
+      if(previous){
+         previous.remove();
+      }
+      const resultInfo = result[criptocoin][coin];
+
+      //rounded price's digits
+      let price = resultInfo.PRICE.toFixed(2);
+      //percentaje variation
+      let percentaje = resultInfo.CHANGEPCTDAY.toFixed(2);
+      //last Update
+      let lastUpdate = new Date(resultInfo.LASTUPDATE * 1000).toLocaleDateString('es-BO');
+      //build template
+      let html = `<div class="result-content success">
+                  <h2>Result:</h2>
+                  <p>The price of ${resultInfo.FROMSYMBOL} in ${resultInfo.TOSYMBOL} coin is ${price}</p>
+                  <p>The last variation: % ${percentaje}</p>
+                  <p>Last update: ${lastUpdate}</p>
+                  </div>`;
+      //show spinner
+      this.showHideSpinner('block');
+      setTimeout(() => {
+         this.showHideSpinner('none');
+         //inner the result
+         document.querySelector(".result").innerHTML = html;
+      }, 3000);
+   }
+
+   showHideSpinner(display){
+      const spinner = document.querySelector(".loader");
+      spinner.style.display = display;
    }
 }

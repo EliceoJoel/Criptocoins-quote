@@ -71,6 +71,7 @@ select {
   font-size: medium;
   color: #fff;
   cursor: pointer;
+  outline: none;
 }
 
 #submit-button:hover {
@@ -86,11 +87,18 @@ select {
 .result-content {
   width: 80%;
   text-align: center;
-  background-color: #0f4e4d;
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 2rem;
   color: #ffffff;
+}
+
+.success {
+  background-color: #0f4e4d;
+}
+
+.error {
+  background-color: #ee3636;
 }
 
 footer {
