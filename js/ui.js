@@ -19,10 +19,6 @@ class UI {
                select.appendChild(option);
             }
          })
-         .catch(error => {
-            let errorHtml = `<div class="result-content error"><p>An error occurred, please reload the page</p></div>`
-            document.querySelector(".result").innerHTML = errorHtml
-         })
    }
 
    showInfoResultOfCriptoCoin(result, criptocoin, coin){
